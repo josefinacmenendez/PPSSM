@@ -1,6 +1,6 @@
-# SpikeRates
+# A point process state space model for estimating the instantaneous rate of the process given a time-series of event times.
 
-MATLAB routines for estimating spike rate functions via state space smoothing.
+This repository contains MATLAB routines for estimating spike rate functions via state space smoothing.
 
 Algorithmic implementations stem from the following manuscript:
 
