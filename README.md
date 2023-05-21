@@ -12,7 +12,7 @@ If you use this code, please cite the repository:
   
 **APA:**
 ```  
-Correa-Menendez, J. (2023). A numerically stable state-space model for spike rate estimation (Version 1.0) [Computer software]. [https://doi.org/10.5281/zendo.7955060](https://doi.org/10.5281/zenodo.7955060)
+Correa-Menendez, J. (2023). A numerically stable state-space model for spike rate estimation (Version 1.0) [Computer software]. https://doi.org/10.5281/zenodo.7955060
 ```  
 **BibTeX:**
 ```
