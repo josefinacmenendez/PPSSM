@@ -1,0 +1,11 @@
+cff-version: 1.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Correa-Menendez"
+  given-names: "Josefina"
+  orcid: "https://orcid.org/0000-0002-5721-5024"
+title: "A numerically stable state-space model for spike rate estimation"
+version: 1.0
+doi: 10.5281/zendo.7955060
+date-released: 2023-05-21
+url: "https://github.com/josefinacmenendez/PPSSM"
