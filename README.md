@@ -9,7 +9,9 @@ Smith, A.C., Scalon, J.D., Wirth, S., Yanike, M., Suzuki, W.A. and Brown, E.N., 
 The implementation in this repository improves the numerical stability of the Newton step in Smith et al., 2010, by using a damped newton algorithm for estimating the latent state.
 
 If you use this code, please cite the repository:
-
+APA:
+Correa-Menendez, J. (2023). A numerically stable state-space model for spike rate estimation (Version 1.0) [Computer software]. [https://doi.org/10.5281/zendo.7955060](https://doi.org/10.5281/zenodo.7955060)
+BibTeX:
 @software{PPSSM,
   author = {Josefina Correa-Menendez},
   doi = {10.5281/zendo.7955060},
