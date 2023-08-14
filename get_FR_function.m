@@ -19,7 +19,13 @@ function firing_rate_struct = get_FR_function(I, J,initial_guess, sigesqguess, s
 %           alpha: initial Newton step (initialized to 1)
 %           alpha_armijo: modified Newton step (found via Backtracking
 %           Armijo Line Search)
-
+[n_rows, n_cols] = size(I);
+if n_rows > 1
+    I = sum(I,1);
+end
+if n_rows > n_cols
+    I = I';
+end
 em_crit = 1e-5;
 sigesqguess_init = sigesqguess;
 if initial_guess
@@ -113,6 +119,7 @@ clear t;
 % Do backward filter-------------------------------------------------------
 x_k_K        = zeros(1,T);
 sig_sq_k_K   = zeros(1,T);
+a            = zeros(1,T);
 x_k_K(T)     = x_k_k(T);
 sig_sq_k_K(T)= sig_sq_k_k(T);
 for t = T-1 :-1: s-1
@@ -126,7 +133,7 @@ x_k_K(1) = []; sig_sq_k_K(1) = []; a(1) =[];
 
 N = length(x_k_K);
 W_k_K = x_k_K(1:N-1).^2 + sig_sq_k_K(1:N-1);
-W_k_plus_one_k_K = ( a.* sig_sq_k_K(2:N) ) + (x_k_K(1:N-1) .* x_k_K(2:N));
+W_k_plus_one_k_K = ( a(2:N).* sig_sq_k_K(2:N) ) + (x_k_K(1:N-1) .* x_k_K(2:N));
 W_k_plus_one_K   = x_k_K(2:N).^2 + sig_sq_k_K(2:N);
 sigsq_new = sum( W_k_K - (2 *W_k_plus_one_k_K) + W_k_plus_one_K ) / (N-1);
 %--------------------------------------------------------------------------

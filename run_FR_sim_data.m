@@ -9,13 +9,13 @@
 close all;
 clear all;
 load('sim_data.mat');
-I = sum(Y); 
+I = sum(Y); % dims 1 x Time
 J = size(Y,1);
 Fs = 1000; 
 initial_guess = 1;
 sigesqguess = 1e-3;
 sigesqkguess = 1e-3;
-xkguess = -1;%log(mean(I));
+xkguess = log(mean(I));
 % estimate starting guess of first time-point
 FR_initial_guess = get_FR_function(I, J,initial_guess, sigesqguess, sigesqkguess, xkguess);
 % use initial guess to estimate all other time-points
@@ -27,7 +27,7 @@ fr_function_cis = compute_fr_function_cis(FR_struct, N_draws, alpha);
 
 T = [2:numel(I)]./Fs;
 x_k_K = exp(FR_struct.x_k_given_K) .*Fs;
-FR_cis= fr_function_cis .* Fs;
+FR_cis= exp(fr_function_cis) .* Fs;
 state_per_second = lambda(2:end) .* Fs;
 emp_rate_per_sec= I(2:end)./J .* Fs;
 f = figure('renderer','painters');
